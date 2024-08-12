@@ -15,6 +15,7 @@ class Test_001_Login:
         self.logger.info("***************** Verifying Home Page Title *****************")
         self.driver = setup
         self.driver.get(self.baseURL)
+        self.driver.implicitly_wait(10)
         act_title = self.driver.title
         if act_title == "Your store. Login":
             assert True
@@ -32,6 +33,7 @@ class Test_001_Login:
         self.logger.info("***************** Verifying Login Test *****************")
         self.driver = setup
         self.driver.get(self.baseURL)
+        self.driver.implicitly_wait(15)
         self.lp = LoginPage(self.driver)
         self.lp.setUserName(self.username)
         self.lp.setPassword(self.password)
